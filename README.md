@@ -5,7 +5,7 @@
 （https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away）
 
 谷歌在官方网站声明Chrome32（2014年）已经处理这个问题，官方给出的解决方案是在head标签里添加meta信息：
-<meta name="viewport" content="width=device-width">
+设置meta标签：content="width=device-width"
 原理是强制设置窗口宽度跟设备宽度一致，浏览器会默认取消双击缩放。
 
 苹果系统直到2016年3月IOS9.3版本才处理延迟，所以未更新的苹果手机还会有延迟现象。
