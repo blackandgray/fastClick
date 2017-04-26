@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html {
+			font-size: 50px;
+		}
+		button, p {
+			font-size: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">CLICK ME</button>
+	<div id="log"></div>
+	<script>
+		var btn = document.querySelector('#btn');
+		var log = document.querySelector('#log');
+		var endTime=0;
+
+		btn.addEventListener('touchstart', function () {
+			log.innerHTML = '';
+			var p = document.createElement('p');
+			p.innerText = 'touchstart: ' + Date.now();
+			log.appendChild(p);
+		});
+
+		btn.addEventListener('touchmove', function () {
+			var p = document.createElement('p');
+			p.innerText = 'touchmove: ' + Date.now();
+			log.appendChild(p);
+		});
+
+		btn.addEventListener('touchend', function () {
+			var p = document.createElement('p');
+			endTime = Date.now();
+			p.innerText = 'touchend: ' + endTime;
+			log.appendChild(p);
+		});
+
+		btn.addEventListener('click', function () {
+			var p1 = document.createElement('p');
+			var p2 = document.createElement('p');
+			p1.innerText = 'click: ' + Date.now();
+			p2.innerText = '间隔：' + (Date.now() - endTime);
+			log.appendChild(p1);
+			log.appendChild(p2);
+		});
+	</script>
+</body>
+</html>
